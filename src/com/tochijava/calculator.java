@@ -11,16 +11,43 @@ public class calculator {
         System.out.println("Welcome to CLI Mortgage Calculator");
         System.out.println("Please Input the following data");
 
+//        declare variables
+        int principal = 0;
+        float interest = 0.0F;
+        int years = 0;
+
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Principal: ");
-        int principal = Integer.parseInt(input.nextLine());
+        while (true) {
+            System.out.print("Principal (1K - 1M): ");
+            principal = Integer.parseInt(input.nextLine());
 
-        System.out.print("Annual Interest Rate: ");
-        float interest = Float.parseFloat(input.nextLine());
+            if (principal >= 1000 && principal <= 10000000)
+                break;
 
-        System.out.print("Period (Years): ");
-        int years = Integer.parseInt(input.nextLine());
+            System.out.println("Enter a valid value with 1K to 1M...");
+        }
+
+        while (true) {
+            System.out.print("Annual Interest Rate: ");
+            interest = Float.parseFloat(input.nextLine());
+
+            if (interest >= 1 && interest <= 30)
+                break;
+
+            System.out.println("Enter a valid value with 1 to 30...");
+        }
+
+        while (true) {
+            System.out.print("Period (Years): ");
+            years = Integer.parseInt(input.nextLine());
+
+            if (years >= 1 && years <= 30)
+                break;
+
+            System.out.println("Enter a valid value with 1 to 30...");
+        }
+
 
 //        format interest per month in percentage
         double monthlyInterest = formatInterest(interest);
