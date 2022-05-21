@@ -1,5 +1,6 @@
 package com.tochijava;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class ifs {
@@ -55,8 +56,8 @@ public class ifs {
         }
 
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter Your Temperature:");
-        int temp = Integer.parseInt(input.nextLine());
+        System.out.print("Enter Your Temperature: ");
+        int temp = Integer.parseInt(input.nextLine().trim());
 
         if (temp >= 70) {
             System.out.println("Water is Boiling");
@@ -71,5 +72,11 @@ public class ifs {
         } else {
             System.out.println("Water is Freezing!");
         }
+
+//        reference exammple
+        Point point1 = new Point(1, 1);
+        Point point2 = point1;
+        point1.x = 4;
+        System.out.println(point2);
     }
 }
