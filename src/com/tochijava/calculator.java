@@ -12,9 +12,9 @@ public class calculator {
         System.out.println("Please Input the following data");
 
 //        declare variables
-        int principal = 0;
-        float interest = 0.0F;
-        int years = 0;
+        int principal;
+        float interest;
+        int years;
 
         Scanner input = new Scanner(System.in);
 
@@ -74,7 +74,6 @@ public class calculator {
     }
 
     private static String formatCurrency(double mortgageInterest) {
-        String mortgageFormat = NumberFormat.getCurrencyInstance().format(mortgageInterest);
-        return mortgageFormat;
+        return NumberFormat.getCurrencyInstance().format(mortgageInterest);
     }
 }
